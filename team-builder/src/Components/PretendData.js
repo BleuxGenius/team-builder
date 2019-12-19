@@ -11,5 +11,13 @@ const PretendData = [
         email: 'kyledesigner@fluiddev.com',
         role: 'Designer'
     },
+    {
+        id:3,
+        name: 'Nina',
+        email: 'ninabackend@fluiddev.com',
+        role: 'Back-end'
+    },
 
-]
+];
+
+export default PretendData;
