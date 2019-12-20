@@ -1,21 +1,28 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import Teammate from './Teammate';
 
 
-const Team = props => {
+function Team(props) {
+
+
+const [team, setTeam ] = useState([]);
+
+useEffect(() => {
+    setTeam(props.teammates);
+}, [props.teammates])
+
+console.log(team);
 
     return(
         <div>
-            {props.teamList.map(teamMember => {
-                return(
-                    <div className='member' key={teamMember.id}>
-                        <h2>{teamMember.name}</h2>
-                        <p>{teamMember.email}</p>
-                <p>{teamMember.role}</p>
-                </div>
+            {team.map((item) => {
+                return (
+                    <Teammate teammate={item}/>
                 )
             })}
-        </div>
-    )
-}
+            </div>
+    );
+        }
+
 
 export default Team;
